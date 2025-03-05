@@ -3,192 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ঘরের দোকান</title>
+    <title>Ghorer Bazar - All Products</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
-            background-color: #333333; /* ঘাড় কালো ব্যাকগ্রাউন্ড */
-            color: #F5D500; /* ঘারো হলুদ লেখা */
         }
-
         header {
-            background-color: #333333; /* ঘাড় কালো */
-            color: #F5D500; /* ঘারো হলুদ */
+            background-color: #ff7f00;
+            padding: 10px;
             text-align: center;
-            padding: 1em;
+            color: white;
         }
-
-        h1 {
-            color: #F5D500; /* ঘারো হলুদ */
-            border-bottom: 3px solid #F5D500; /* ঘারো হলুদ বর্ডার */
-            padding-bottom: 10px;
-        }
-
-        /* Scroll text */
-        .scrolling-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: #F5D500; /* ঘারো হলুদ */
-            white-space: nowrap;
+        .container {
+            width: 90%;
+            margin: auto;
             overflow: hidden;
-            width: 100%;
+            padding: 20px;
+        }
+        .banner {
+            background: url('banner-image-url') no-repeat center center;
+            height: 200px;
+            background-size: cover;
             position: relative;
         }
-
-        .scrolling-text span {
+        .banner p {
             position: absolute;
-            animation: marquee 20s linear infinite; /* সময়কাল ২০ সেকেন্ড */
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
         }
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        #cart {
-            float: right;
-            margin-top: -40px;
-            background-color: #F5D500; /* ঘারো হলুদ ব্যাকগ্রাউন্ড */
-            padding: 10px;
-            color: #333333; /* ঘাড় কালো লেখা */
-            border-radius: 5px;
-        }
-
-        main {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        h2 {
+            text-align: center;
+            margin-top: 20px;
         }
 
         .products {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
             gap: 20px;
         }
 
         .product {
-            background-color: #333333; /* ঘাড় কালো */
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            width: 48%; /* 2 products per row */
+            margin: 10px 0;
             text-align: center;
-            width: 200px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
+            padding: 15px;
+            position: relative;
+            box-sizing: border-box;
         }
 
         .product h3 {
-            color: #F5D500; /* ঘারো হলুদ */
             font-size: 1.2em;
             margin-bottom: 10px;
         }
 
         .product p {
             font-size: 1.1em;
-            color: #F5D500; /* ঘারো হলুদ */
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .product button {
-            background-color: #F5D500; /* ঘারো হলুদ */
-            color: #333333; /* ঘাড় কালো */
+        .btn {
+            background-color: #ff7f00;
+            color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 1em;
         }
 
-        .product button:hover {
-            background-color: #FFD600; /* হলুদ একটু উজ্জ্বল হবে */
+        .btn:hover {
+            background-color: #e66e00;
         }
 
-        .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        .discount {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.9em;
         }
 
-        footer {
-            background-color: #333333; /* ঘাড় কালো */
-            color: #F5D500; /* ঘারো হলুদ */
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        @media (max-width: 768px) {
+            .product {
+                width: 48%; /* Maintain 2 items per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: 100%; /* 1 product per row on very small screens */
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>ঘরের দোকান</h1>
-        <div class="scrolling-text"><span>সকল নতুন পণ্য এখন উপলব্ধ! দ্রুত কিনুন!</span></div>
-        <div id="cart">Cart: 0 items</div>
+        <h1>Ghorer Bazar</h1>
+        <p>Contact: +8801321208940 | Hotline: 09642-922922</p>
     </header>
 
-    <main>
-        <section class="products">
-            <!-- Product 1 -->
-            <div class="product" data-id="1">
-                <img src="product1.jpeg" alt="Product 1"> <!-- প্রথম প্রোডাক্টের ছবি -->
-                <h3>Product 1</h3>
-                <p>৳500</p>
-                <button class="add-to-cart">Add to Cart</button>
+    <div class="container">
+        <div class="banner">
+            <p>9% Discount on Ramadan!</p>
+        </div>
+
+        <h2>All Products</h2>
+
+        <div class="products">
+            <div class="product">
+                <div class="discount">Discount 500৳</div>
+                <h3>Sukkari Mufattal Malaki 3kg</h3>
+                <p>Tk 4,000.00 <s>Tk 4,500.00</s></p>
+                <button class="btn">Quick Add</button>
             </div>
-
-            <!-- Product 2 -->
-            <div class="product" data-id="2">
-                <img src="product2.jpg" alt="Product 2"> <!-- দ্বিতীয় প্রোডাক্টের ছবি -->
-                <h3>Product 2</h3>
-                <p>৳800</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="product">
+                <div class="discount">Discount 140৳</div>
+                <h3>Ajwa Premium Dates 1kg</h3>
+                <p>Tk 1,860.00 <s>Tk 2,000.00</s></p>
+                <button class="btn">Quick Add</button>
             </div>
-
-            <!-- Product 3 -->
-            <div class="product" data-id="3">
-                <img src="product3.jpg" alt="Product 3"> <!-- তৃতীয় প্রোডাক্টের ছবি -->
-                <h3>Product 3</h3>
-                <p>৳1200</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="product">
+                <div class="discount">Discount 200৳</div>
+                <h3>Organic Dates 500g</h3>
+                <p>Tk 1,000.00 <s>Tk 1,200.00</s></p>
+                <button class="btn">Quick Add</button>
             </div>
-
-            <!-- Product 4 -->
-            <div class="product" data-id="4">
-                <img src="product4.jpg" alt="Product 4"> <!-- চতুর্থ প্রোডাক্টের ছবি -->
-                <h3>Product 4</h3>
-                <p>৳1500</p>
-                <button class="add-to-cart">Add to Cart</button>
+            <div class="product">
+                <div class="discount">Discount 300৳</div>
+                <h3>Fresh Dates 1kg</h3>
+                <p>Tk 1,500.00 <s>Tk 1,800.00</s></p>
+                <button class="btn">Quick Add</button>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 ঘরের দোকান. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        let cartCount = 0;
-        const cart = document.getElementById('cart');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                cartCount++;
-                cart.textContent = `Cart: ${cartCount} items`;
-            });
-        });
-    </script>
+        </div>
+    </div>
 </body>
 </html>
